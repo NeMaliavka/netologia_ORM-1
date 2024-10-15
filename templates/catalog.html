@@ -1,0 +1,13 @@
+<h1>Catalog</h1>
+<div>
+    <a href="?sort=name">Sort by Name</a>
+    <a href="?sort=min_price">Sort by Price</a>
+</div>
+<ul>
+    {% for phone in phones %}
+        <li>
+            <a href="{% url 'phone_detail' phone.slug %}">{{ phone.name }}</a> - ${{ phone.price }}
+            <img src="{{ phone.image }}" alt="{{ phone.name }}" width="100"/>
+        </li>
+    {% endfor %}
+</ul>
