@@ -16,10 +16,8 @@ class Command(BaseCommand):
             reader = csv.DictReader(csvfile, delimiter=';')
             for row in reader:
                 slug = slugify(row['name'])  # Генерация slug
-
-                # Создание объекта Phone (то, что Вам нужно)
                 phone = Phone(
-                    id=row['id'],  # Не забудьте про преобразование типов, если нужно
+                    id=row['id'], 
                     name=row['name'],
                     price=row['price'],
                     image=row['image'],
