@@ -6,7 +6,7 @@ def catalog(request):
     if sort_by == 'price':
         phones = Phone.objects.all().order_by('price')
     elif sort_by == 'min_price':
-        phones = Phone.objects.all().order_by('price')
+        phones = Phone.objects.all().order_by('-price')  # Сортировка по убыванию цены
     else:
         phones = Phone.objects.all().order_by('name')
 
