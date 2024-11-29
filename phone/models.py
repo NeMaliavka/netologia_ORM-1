@@ -1,8 +1,7 @@
 from django.db import models
-from slugify import slugify  # Подключаем библиотеку для слагификации
+from slugify import slugify 
 
 class Phone(models.Model):
-    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.URLField()
